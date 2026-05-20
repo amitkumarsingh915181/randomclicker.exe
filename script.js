@@ -21,7 +21,7 @@ const CONFIG = {
     // How many items to fetch per section:
     REELS_LIMIT: 50, // Increased to show all
     POSTS_LIMIT: 50, // Show all
-    GALLERY_LIMIT: 30,
+    GALLERY_LIMIT: 45, // Set to 45 to show 90 items (45 * 2)
 };
 
 // ============================================================
