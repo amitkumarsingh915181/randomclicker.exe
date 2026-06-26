@@ -13,7 +13,7 @@ const player = new Plyr('#lightbox-video', {
 // ============================================================
 const CONFIG = {
     // Paste your Instagram Basic Display API access token here:
-    ACCESS_TOKEN: 'IGAAaG5UFyUBlBZAFpWUEkycDBMa2dWdzFUZAU5VSmptMlFuM0pVUnZAiTW9wdnUwYXgtVlI2NlgtYms0dVZATVGJqU2ZAiMlNUMEJha2xfaENuNHl2WjRIQVRSSklhNS0yZAmZAVNWY3WlZAWLXNEdlEwQWI0ODAxSldCQTB0d3U2NDhpWQZDZD',
+    ACCESS_TOKEN: 'IGAAaG5UFyUBlBZAFktMVdHRloxNWE3MG93NEFsVm9pcWhZATUdGaGFmSVR6WnpzcGdWTmZAHTEZAhZA09YSnZArM2UtTEdpWldQX2tPUlEtNlhhbE9uUTB5TXJlSlowQ1l5Q05JcDJVV3RUTjhzdzRnX3BTeTZAXR29zaXJ0V0FOQXRBNAZDZD',
 
     // Your Instagram username (for display only):
     USERNAME: 'randomclicker.exe',
