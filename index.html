@@ -4,33 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>randomclicker.exe | Street & Life Photography by Amit Singh</title>
+    <title>Amit Singh | Award-Winning Cinematic Street & Life Photography</title>
     <meta name="description"
-        content="Explore the photography portfolio of Amit Singh (randomclicker.exe). Capturing raw street life, cinematic moments, and unscripted emotions across India.">
+        content="Immersive photography portfolio of Amit Singh (randomclicker.exe). Street photography, travel storytelling, and raw unscripted cinematic moments.">
     <meta name="keywords"
-        content="Amit Singh photography, street photography India, delhi street photographer, cinematic photography, randomclicker.exe, travel photography Varanasi">
+        content="Amit Singh, street photography, travel photographer, cinematic portfolio, randomclicker.exe, documentary photography, editorial photographer">
     <meta name="author" content="Amit Singh">
-    <link rel="canonical" href="https://randomclicker.exe.portfolio/">
+    <link rel="canonical" href="https://randomclicker-exe.vercel.app/">
 
     <!-- Social Meta Tags (Open Graph) -->
-    <meta property="og:title" content="randomclicker.exe | Street & Life Photography Portfolio">
-    <meta property="og:description"
-        content="Capturing unscripted moments and cinematic street life. Explore the work of Amit Singh.">
+    <meta property="og:title" content="Amit Singh | Cinematic Street & Life Photography">
+    <meta property="og:description" content="Capturing unscripted moments and raw cinematic street life across India.">
     <meta property="og:image" content="hero.png">
-    <meta property="og:url" content="https://randomclicker.exe.portfolio/">
+    <meta property="og:url" content="https://randomclicker-exe.vercel.app/">
     <meta property="og:type" content="website">
 
     <!-- Twitter Card Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="randomclicker.exe | Photography Portfolio">
+    <meta name="twitter:title" content="Amit Singh | Cinematic Photography Portfolio">
     <meta name="twitter:description" content="Cinematic street photography and unscripted life moments by Amit Singh.">
     <meta name="twitter:image" content="hero.png">
 
     <!-- Browser Theme & Mobile -->
-    <meta name="theme-color" content="#1A1714">
+    <meta name="theme-color" content="#1a1714">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
     <link rel="icon" type="image/png" href="favicon.png">
 
     <!-- Preconnect & DNS Prefetch -->
@@ -38,12 +36,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://graph.instagram.com">
     <link rel="preconnect" href="https://cdn.plyr.io">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
+    <!-- Typography: Playfair Display (Heading), Cormorant Garamond (Sub), Inter (Body), Space Grotesk (Button) -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Mono:wght@300;400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Space+Grotesk:wght@400;500;600&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- External Stylesheets -->
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="style.css">
 
     <!-- Structured Data (JSON-LD) -->
@@ -59,91 +61,145 @@
         "https://instagram.com/randomclicker.exe",
         "https://instagram.com/randomamit.jpg"
       ],
-      "jobTitle": "Street Photographer",
-      "description": "Amit Singh is a street and life photographer based in India, specializing in cinematic and unscripted moments."
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "randomclicker.exe Photography",
-      "image": "hero.png",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Delhi",
-        "addressCountry": "IN"
-      },
-      "telephone": "+919151814927",
-      "priceRange": "$$",
-      "url": "https://randomclicker-exe.vercel.app/"
+      "jobTitle": "Street & Editorial Photographer",
+      "description": "Amit Singh is a street and life photographer based in India, specializing in cinematic storytelling and unscripted moments."
     }
     </script>
 </head>
 
 <body>
 
+    <!-- Film Grain Overlay -->
     <div class="film-grain"></div>
+
+    <!-- Custom Cursor -->
     <div class="cursor" id="cursor"></div>
-    <div class="cursor-ring" id="cursorRing"></div>
+    <div class="cursor-ring" id="cursorRing"><span class="cursor-text" id="cursorText"></span></div>
 
-    <!-- Nav -->
-    <nav>
-        <a href="#" class="nav-logo">Random Clicker</a>
+    <!-- Fullscreen Cinematic Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-noise"></div>
+        <div class="preloader-content">
+            <div class="shutter-lens">
+                <svg class="lens-svg" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="46" fill="none" stroke="#c8a97e" stroke-width="1"
+                        stroke-dasharray="8 4" />
+                    <circle cx="50" cy="50" r="38" fill="none" stroke="#9b8f82" stroke-width="0.5" />
+                    <path class="aperture-blade blade-1" d="M50,15 L65,45 L35,45 Z" fill="none" stroke="#c8a97e"
+                        stroke-width="0.75" />
+                    <path class="aperture-blade blade-2" d="M85,50 L55,65 L55,35 Z" fill="none" stroke="#c8a97e"
+                        stroke-width="0.75" />
+                    <path class="aperture-blade blade-3" d="M50,85 L35,55 L65,55 Z" fill="none" stroke="#c8a97e"
+                        stroke-width="0.75" />
+                    <path class="aperture-blade blade-4" d="M15,50 L45,35 L45,65 Z" fill="none" stroke="#c8a97e"
+                        stroke-width="0.75" />
+                </svg>
+            </div>
+            <div class="preloader-counter-wrap">
+                <span class="preloader-counter" id="loaderPercentage">0%</span>
+            </div>
+            <div class="preloader-bar-bg">
+                <div class="preloader-bar" id="loaderBar"></div>
+            </div>
+            <p class="preloader-status">INITIALIZING SHUTTER</p>
+        </div>
+        <div class="shutter-panel shutter-top"></div>
+        <div class="shutter-panel shutter-bottom"></div>
+    </div>
+
+    <!-- Glass Navigation -->
+    <nav class="navbar" id="navbar">
+        <a href="#hero" class="nav-logo" data-cursor="SCROLL">Random Clicker</a>
         <ul class="nav-links">
-            <li><a href="#reels">Reels</a></li>
-            <li><a href="#posts">Posts</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#about">About</a></li>
-
+            <li><a href="#story" class="nav-link">Story</a></li>
+            <li><a href="#posts" class="nav-link">Posts</a></li>
+            <li><a href="#gallery" class="nav-link">Gallery</a></li>
+            <li><a href="#software" class="nav-link">Craft</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
         <a href="https://instagram.com/randomclicker.exe" target="_blank" rel="noopener noreferrer" class="nav-insta"
-            aria-label="Follow randomclicker.exe on Instagram">@randomclicker.exe</a>
+            aria-label="Follow randomclicker.exe on Instagram" data-cursor="OPEN">
+            <span>@randomclicker.exe</span>
+            <svg class="icon-arrow" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M7 17L17 7M17 7H7M17 7V17" />
+            </svg>
+        </a>
     </nav>
 
-    <!-- Hero -->
-    <div class="hero">
+    <!-- Setup Banner (Shown when Instagram API token setup required) -->
+    <div id="setupBanner" class="setup-banner" style="display:none;">
+        <div class="setup-content">
+            <span class="setup-label">API Connect</span>
+            <p>Connect your Instagram Access Token to auto-sync live feeds, or explore the handcrafted editorial
+                showcase below.</p>
+            <div class="setup-actions">
+                <input type="text" id="tokenInput" class="setup-input" placeholder="Paste Graph API Token...">
+                <button onclick="applyToken()" class="btn-setup">Sync Token</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
         <div class="hero-left">
-            <p class="hero-eyebrow fade-up">Photography Portfolio</p>
-            <h1 class="hero-title fade-up">
-                Random<br><em>clicks,</em><br>real moments
+            <div class="hero-eyebrow-wrap">
+                <span class="hero-eyebrow fade-up">Editorial Showcase</span>
+            </div>
+            <h1 class="hero-title split-text" id="heroTitle">
+                Random<br><span class="title-accent">Clicks,</span><br>Real Moments
             </h1>
-            <p class="hero-sub fade-up">
-                @randomclicker.exe — Street, life & everything in between. Every frame is an accident worth keeping.
+            <p class="hero-subtitle fade-up">
+                Street Photography &nbsp;&middot;&nbsp; Travel &nbsp;&middot;&nbsp; Documentary &nbsp;&middot;&nbsp;
+                Storytelling Through Frames
             </p>
             <div class="hero-cta fade-up">
-                <a href="#gallery" class="btn-primary">View Work</a>
+                <a href="#gallery" class="btn-primary" data-cursor="VIEW">
+                    <span>View Gallery</span>
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </a>
+                <a href="#story" class="btn-ghost" data-cursor="SCROLL">
+                    <span>Explore Stories</span>
+                </a>
             </div>
-            <div class="hero-scroll">
-                <span class="scroll-line"></span>
-                scroll
+            <div class="hero-scroll-indicator" data-cursor="SCROLL">
+                <div class="mouse-icon">
+                    <div class="mouse-wheel"></div>
+                </div>
+                <span class="scroll-text">SCROLL TO REVEAL</span>
             </div>
         </div>
-        <div class="hero-right">
-            <img src="hero.png" alt="Amit Singh Street Photography - Cinematic Street Moment"
-                style="width:100%;height:100%;object-fit:cover;" class="fade-up">
+
+        <div class="hero-right" id="heroImageContainer" data-cursor="VIEW">
+            <div class="hero-spotlight"></div>
+            <div class="hero-img-frame tilt-element">
+                <img src="hero.png" alt="Featured Street Photograph by Amit Singh" class="hero-img parallax-img"
+                    loading="eager">
+                <div class="hero-img-reflection"></div>
+            </div>
+            <!-- <div class="hero-caption-floating">
+                <span class="caption-label">Featured Capture</span>
+                <span class="caption-meta">Old Delhi · 35mm f/1.4</span>
+            </div> -->
         </div>
-    </div>
+    </section>
 
-    <!-- Setup Banner (shown when no token) -->
-    <div id="setupBanner" style="background:#C8A97E;padding:1rem 3rem;display:none;">
-        <p style="font-size:0.72rem;letter-spacing:0.05em;color:#1A1714;">
-            <strong>Instagram API Setup:</strong> Enter your Instagram Access Token below to auto-load your posts, reels
-            & gallery.
-            Get your token at <a href="https://developers.facebook.com/tools/explorer/" target="_blank"
-                style="color:#1A1714;border-bottom:1px solid #1A1714;">Meta Graph Explorer</a>
-        </p>
-    </div>
-
-    <!-- REELS Section -->
-    <section id="reels">
+    <section class="section story-section" id="story">
         <div class="section-header">
-            <h2 class="section-title">Reels</h2>
-            <span class="section-tag">Video</span>
-            <span class="section-count" id="reels-count"></span>
+            <div class="header-left">
+                <span class="section-tag">Motion Chronicles</span>
+                <h2 class="section-title">Story &amp; Reels</h2>
+            </div>
+            <span class="section-count" id="reels-count">6 Cinematic Stories</span>
         </div>
-        <div id="reels-container" class="swiper">
-            <div class="swiper-wrapper" id="reels-wrapper">
+
+        <div id="setupBanner" class="setup-banner" style="display:none;"></div>
+        <div class="story-pin-wrapper swiper" id="reels-container">
+            <div class="swiper-wrapper story-horizontal-track" id="reels-wrapper">
+                <!-- Reels dynamically populated via script.js -->
                 <div class="loading-state swiper-slide">
                     <div class="loading-dots">
                         <span class="loading-dot"></span>
@@ -152,20 +208,22 @@
                     </div>
                 </div>
             </div>
-            <!-- Swiper Navigation -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next" data-cursor="VIEW"></div>
+            <div class="swiper-button-prev" data-cursor="VIEW"></div>
         </div>
     </section>
 
-    <!-- POSTS Section -->
-    <section id="posts">
+    <!-- POSTS SECTION (Editorial Grid) -->
+    <section class="section posts-section" id="posts">
         <div class="section-header">
-            <h2 class="section-title">Posts</h2>
-            <span class="section-tag">Photos</span>
-            <span class="section-count" id="posts-count"></span>
+            <div class="header-left">
+                <span class="section-tag">Photo Essays</span>
+                <h2 class="section-title">Posts</h2>
+            </div>
+            <span class="section-count" id="posts-count">Loading Feed</span>
         </div>
-        <div id="posts-container" class="swiper">
+
+        <div class="swiper posts-swiper" id="posts-container">
             <div class="swiper-wrapper" id="posts-wrapper">
                 <div class="loading-state swiper-slide">
                     <div class="loading-dots">
@@ -175,27 +233,31 @@
                     </div>
                 </div>
             </div>
-            <!-- Swiper Navigation -->
-            <div class="swiper-button-next posts-next"></div>
-            <div class="swiper-button-prev posts-prev"></div>
+            <div class="swiper-button-next posts-next" data-cursor="VIEW"></div>
+            <div class="swiper-button-prev posts-prev" data-cursor="VIEW"></div>
         </div>
     </section>
 
-    <!-- GALLERY Section -->
-    <section id="gallery">
+    <!-- GALLERY SECTION (Premium Masonry Grid) -->
+    <section class="section gallery-section" id="gallery">
         <div class="section-header">
-            <h2 class="section-title">Gallery</h2>
-            <span class="section-tag">All Work</span>
-            <span class="section-count" id="gallery-count"></span>
+            <div class="header-left">
+                <span class="section-tag">Archive Showcase</span>
+                <h2 class="section-title">Masonry Gallery</h2>
+            </div>
+            <span class="section-count" id="gallery-count">Curated Archive</span>
         </div>
-        <div class="gallery-filter" id="gallery-filter">
+
+        <div class="gallery-filter-bar" id="gallery-filter">
             <button class="filter-btn active" data-filter="all">All</button>
             <button class="filter-btn" data-filter="IMAGE">Photos</button>
             <button class="filter-btn" data-filter="VIDEO">Reels</button>
             <button class="filter-btn" data-filter="CAROUSEL_ALBUM">Albums</button>
         </div>
+
         <div class="gallery-masonry" id="gallery-container">
-            <div class="loading-state" style="column-span:all">
+            <!-- Populated via script.js -->
+            <div class="loading-state" style="column-span:all;">
                 <div class="loading-dots">
                     <span class="loading-dot"></span>
                     <span class="loading-dot"></span>
@@ -205,153 +267,657 @@
         </div>
     </section>
 
-    <!-- ABOUT Section -->
-    <section id="about">
-        <div class="about-grid">
-            <div class="about-img">
-                <img src="portrait.png" alt="Amit Singh - Street Photographer based in India" id="about-img"
-                    style="width:100%;height:100%;object-fit:cover;">
+    <!-- NEW SECTION: Testimonials -->
+    <section class="section testimonials-section" id="testimonials">
+        <div class="section-header center-header">
+            <h2 class="section-title">Creative Partnerships & Client Reviews</h2>
+            <span class="section-tag">Reviews • Partnerships • Creator Feedback</span>
+        </div>
+
+        <div class="swiper testimonials-swiper">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                    <div class="testimonial-card glass-card" data-cursor="VIEW">
+                        <svg class="quote-svg" viewBox="0 0 24 24" width="32" height="32" fill="#c8a97e" opacity="0.3">
+                            <path
+                                d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                        <p class="test-quote">"Amit has the ability to capture every single emotions , and the
+                            beautiful part is he captures even the minute details !"</p>
+                        <div class="test-author">
+                            <span class="author-name">MANISHA</span>
+                            <span class="author-role"><a
+                                    href="https://www.instagram.com/chokher._moni/">@chokher._moni</a></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="testimonial-card glass-card" data-cursor="VIEW">
+                        <svg class="quote-svg" viewBox="0 0 24 24" width="32" height="32" fill="#c8a97e" opacity="0.3">
+                            <path
+                                d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                        <p class="test-quote">"He has excellent filmmaking skills, a creative vision, and a great eye
+                            behind the camera. His video editing is also impressive. Collaborating with him complements
+                            my work perfectly, making it a great creative partnership."</p>
+                        <div class="test-author">
+                            <span class="author-name">RAJ</span>
+                            <span class="author-role"><a
+                                    href="https://www.instagram.com/rcreatorix/">@rcreatorix</a></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="testimonial-card glass-card" data-cursor="VIEW">
+                        <img src="Photography_Partner .png" alt="photo partnership"
+                            style="width: 100%; border-radius: 12px; margin-bottom: 15px; object-fit: contain; max-height: 250px;">
+                        <div class="test-author">
+                            <!-- <span class="author-name"></span> -->
+                            <h3 style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--ink); margin: 0;">Photo Partnership with IIMUN</h3>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            <div>
-                <p class="about-eyebrow">About Amit</p>
-                <h2 class="about-title">Capturing emotions in<br>random moments, <em>perfectly</em></h2>
-                <p class="about-body">
-                    I'm Amit — better known as <strong>randomclicker.exe</strong>. I specialize in finding beauty in the
-                    unscripted. My work is about capturing raw emotions as they happen, often through dramatic
-                    silhouettes and cinematic street scenes.
-                </p>
-                <p class="about-body" style="margin-bottom:0;">
-                    Based in India. Whether I'm exploring the ghats of Varanasi or chasing light in urban alleys, I'm
-                    always looking for that one frame that tells a story. And yes, I'm known to smile like a quokka when
-                    I nail the perfect shot. 😊
-                </p>
-                <div class="about-stats">
-                    <div>
-                        <div class="stat-num" id="stat-posts">—</div>
-                        <div class="stat-label">Posts</div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+
+    <!-- NEW SECTION: Skills & Expertise Marquee -->
+    <section class="clients-section" id="expertise-marquee">
+        <div class="marquee-container">
+            <div class="marquee-track">
+                <!-- Repeated skills for infinite loop -->
+                <div class="marquee-item"><span class="logo-text">FILMMAKING & EDITING</span></div>
+                <div class="marquee-sep">&middot;</div>
+                <div class="marquee-item"><span class="logo-text">PHOTOGRAPHY MASTERY</span></div>
+                <div class="marquee-sep">&middot;</div>
+                <div class="marquee-item"><span class="logo-text">CREATIVE DIRECTION</span></div>
+                <div class="marquee-sep">&middot;</div>
+                <div class="marquee-item"><span class="logo-text">STORYTELLING</span></div>
+                <div class="marquee-sep">&middot;</div>
+                <div class="marquee-item"><span class="logo-text">AI WORKFLOWS</span></div>
+                <div class="marquee-sep">&middot;</div>
+                <div class="marquee-item"><span class="logo-text">DOCUMENTARY LIFE</span></div>
+                <div class="marquee-sep">&middot;</div>
+                <!-- Duplicate for seamless scroll -->
+                <div class="marquee-item"><span class="logo-text">FILMMAKING & EDITING</span></div>
+                <div class="marquee-sep">&middot;</div>
+                <div class="marquee-item"><span class="logo-text">PHOTOGRAPHY MASTERY</span></div>
+                <div class="marquee-sep">&middot;</div>
+                <div class="marquee-item"><span class="logo-text">CREATIVE DIRECTION</span></div>
+                <div class="marquee-sep">&middot;</div>
+                <div class="marquee-item"><span class="logo-text">STORYTELLING</span></div>
+                <div class="marquee-sep">&middot;</div>
+                <div class="marquee-item"><span class="logo-text">AI WORKFLOWS</span></div>
+                <div class="marquee-sep">&middot;</div>
+                <div class="marquee-item"><span class="logo-text">DOCUMENTARY LIFE</span></div>
+                <div class="marquee-sep">&middot;</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section about-section" id="about">
+        <div class="about-editorial-grid">
+            <div class="about-img-frame" data-cursor="VIEW">
+                <img src="portrait.png" alt="Amit Singh Portrait - Street Photographer"
+                    class="about-portrait-img parallax-img" loading="lazy">
+                <!-- <div class="about-img-badge">
+                    <span>EST. 2023</span>
+                </div> -->
+            </div>
+
+            <div class="about-bio-wrap">
+                <span class="section-tag">The Photographer</span>
+                <h2 class="about-title">Capturing raw truth in <span class="title-accent">fleeting seconds</span></h2>
+                <div class="about-body">
+                    <p>I am Amit — better known across the digital realm as <strong>randomclicker.exe</strong>. My
+                        creative philosophy centres on finding profound visual elegance in unscripted accidents. Whether
+                        documenting the timeless mysticism of Varanasi ghats or navigating the sunlit geometry of urban
+                        alleys, I search for moments where dramatic light meets human emotion.</p>
+                    <p>My work bridges raw documentary street life with polished editorial composition. Every shutter
+                        click is an exploration of patience, instinct, and optical storytelling.</p>
+                </div>
+
+                <!-- Animated Counters -->
+                <div class="stats-counter-grid" id="statsGrid">
+                    <div class="stat-box">
+                        <div class="stat-num-wrap"><span class="stat-num" id="stat-posts"
+                                data-target="500">0</span><span class="stat-suffix">+</span></div>
+                        <span class="stat-label">Photos Published</span>
                     </div>
-                    <div>
-                        <div class="stat-num" id="stat-followers">—</div>
-                        <div class="stat-label">Followers</div>
+                    <div class="stat-box">
+                        <div class="stat-num-wrap"><span class="stat-num" data-target="150">0</span><span
+                                class="stat-suffix">+</span></div>
+                        <span class="stat-label">Reels Edited</span>
                     </div>
-                    <div>
-                        <div class="stat-num">2+</div>
-                        <div class="stat-label">Years</div>
+                    <div class="stat-box">
+                        <div class="stat-num-wrap"><span class="stat-num" data-target="40">0</span><span
+                                class="stat-suffix">+</span></div>
+                        <span class="stat-label">Projects Completed</span>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-num-wrap"><span class="stat-num" id="stat-views" data-target="3">0</span><span
+                                class="stat-suffix">M+</span></div>
+                        <span class="stat-label">Global Views</span>
+                    </div>
+                </div>
+
+                <!-- Experience Timeline -->
+                <div class="experience-timeline">
+                    <h3 class="timeline-title"> Milestones</h3>
+                    <div class="timeline-item">
+                        <span class="timeline-year">2026</span>
+                        <div class="timeline-desc">
+                            <h4> Photography & Cinematic Storytelling</h4>
+                            <p>Expanded documentary storytelling into cinematic short-form filmmaking and AI photography
+                                workflows.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-year">2025</span>
+                        <div class="timeline-desc">
+                            <h4>Street Chronicles Across India</h4>
+                            <p>Extensive travel photography series capturing festival traditions and street portraits in
+                                Delhi &amp; Varanasi.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CONNECT Section -->
-    <section id="connect" style="background: var(--surface); padding: 4rem 3rem;">
-        <div style="display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap;">
-            <a href="https://www.instagram.com/randomclicker.exe/" target="_blank" rel="noopener noreferrer"
-                style="text-decoration: none; text-align: center;" aria-label="View Portfolio on Instagram">
-                <div
-                    style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--ink); margin-bottom: 0.5rem;">
-                    @randomclicker.exe</div>
-                <div style="font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--warm);">
-                    Portfolio Profile</div>
-            </a>
-            <a href="https://www.instagram.com/randomamit.jpg" target="_blank" rel="noopener noreferrer"
-                style="text-decoration: none; text-align: center;" aria-label="View Personal Profile on Instagram">
-                <div
-                    style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--ink); margin-bottom: 0.5rem;">
-                    @randomamit.jpg</div>
-                <div style="font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--warm);">
-                    Personal Profile</div>
-            </a>
-        </div>
-    </section>
 
-    <!-- CONTACT Section -->
-    <section id="contact">
+    <section class="section software-section" id="software">
         <div class="section-header">
-            <h2 class="section-title">Let's Work Together</h2>
-            <span class="section-tag">Contact</span>
+            <div class="header-left">
+                <span class="section-tag">Digital Toolkit</span>
+                <h2 class="section-title">Software I Use</h2>
+            </div>
+            <p class="section-desc">The creative suite powering color grading, editorial retouching, and cinematic
+                reels.</p>
         </div>
-        <div class="contact-grid">
-            <div class="contact-info">
-                <p>Available for shoots, collabs, and creative projects. Find me on Instagram or drop a message below.
-                </p>
-                <div class="contact-links">
-                    <a href="mailto:amitkumarsingh915181@gmail.com" class="contact-link">
-                        <span class="contact-link-tag">Email</span>
-                        amitkumarsingh915181@gmail.com
-                    </a>
-                    <a href="https://instagram.com/randomclicker.exe" target="_blank" rel="noopener noreferrer"
-                        class="contact-link">
-                        <span class="contact-link-tag">Instagram</span>
-                        @randomclicker.exe
-                    </a>
-                    <a href="https://instagram.com/randomamit.jpg" target="_blank" rel="noopener noreferrer"
-                        class="contact-link">
-                        <span class="contact-link-tag">Personal</span>
-                        @randomamit.jpg
-                    </a>
-                    <a href="tel:+919151814927" class="contact-link">
-                        <span class="contact-link-tag">Phone</span>
-                        +91 9151814927
-                    </a>
-                    <div class="contact-link">
-                        <span class="contact-link-tag">Based</span>
-                        Delhi, India
-                    </div>
+
+        <div class="software-grid">
+            <!-- Adobe Photoshop -->
+            <div class="software-card tilt-card" data-cursor="OPEN">
+                <div class="software-card-glow"></div>
+                <div class="software-logo-wrap">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511.76 498.97" width="48" height="48">
+                        <title>adobe-photoshop</title>
+                        <rect fill="#001e36" width="511.76" height="498.97" rx="90.62" />
+                        <path fill="#31a8ff"
+                            d="M115.24,349.91V130.53c0-1.59.68-2.4,2.06-2.4,3.65,0,7,0,12-.17s10.47-.23,16.31-.34l18.54-.35q9.78-.17,19.39-.17,26.09,0,44,6.52a76.4,76.4,0,0,1,28.66,17.51,67.06,67.06,0,0,1,15.62,24.21A80.31,80.31,0,0,1,276.61,203q0,27.48-12.7,45.32a71.82,71.82,0,0,1-34.33,25.92c-14.42,5.38-30.45,7.2-48.07,7.2-5,0-8.58-.05-10.64-.17s-5.15-.17-9.27-.17v68.49a2.72,2.72,0,0,1-2.32,3.09,2.49,2.49,0,0,1-.77,0H117.64C116,352.65,115.24,351.74,115.24,349.91ZM161.6,169.33v71.55q4.46.35,8.24.34h11.33a80.56,80.56,0,0,0,24.55-3.92A37,37,0,0,0,223.23,226q6.69-7.89,6.69-22a34.74,34.74,0,0,0-5-18.88A32,32,0,0,0,210,172.93,63.68,63.68,0,0,0,185,168.64q-8.25,0-14.59.17t-8.76.52Z" />
+                        <path fill="#31a8ff"
+                            d="M409.35,227.87a80,80,0,0,0-20.43-7.21,108.28,108.28,0,0,0-23.86-2.75,44.38,44.38,0,0,0-12.87,1.55,11.55,11.55,0,0,0-6.7,4.29,10.79,10.79,0,0,0-1.71,5.84,9.08,9.08,0,0,0,2.06,5.49,23.25,23.25,0,0,0,7.21,5.66,141.8,141.8,0,0,0,15.1,7,150,150,0,0,1,32.79,15.62,50,50,0,0,1,16.82,17.68,47.17,47.17,0,0,1,5,22,49.41,49.41,0,0,1-8.24,28.33,54.23,54.23,0,0,1-23.86,19.05Q375,357.3,352,357.3a140.51,140.51,0,0,1-29-2.75,92.44,92.44,0,0,1-21.8-6.87,4.44,4.44,0,0,1-2.41-4.12V306.49a2,2,0,0,1,.86-1.89,1.66,1.66,0,0,1,1.89.17A91.62,91.62,0,0,0,328,315.24a108.66,108.66,0,0,0,25.07,3.26q12,0,17.68-3.09a9.7,9.7,0,0,0,5.66-8.92q0-4.47-5.15-8.59T350.3,288a126.06,126.06,0,0,1-30.38-15.45,52.42,52.42,0,0,1-16.14-18,47.35,47.35,0,0,1-5-21.8A49.21,49.21,0,0,1,306,206.93a52.37,52.37,0,0,1,22.32-19.57q15.1-7.55,37.76-7.55a167.13,167.13,0,0,1,26.44,1.88,69.58,69.58,0,0,1,18.4,5,3.13,3.13,0,0,1,2.06,1.89,9.31,9.31,0,0,1,.34,2.57v34.68a2.3,2.3,0,0,1-1,2.06A3.33,3.33,0,0,1,409.35,227.87Z" />
+                    </svg>
+                </div>
+                <div class="software-info">
+                    <h3 class="software-name">Adobe Photoshop</h3>
+                    <span class="software-level">Expert Level</span>
+                </div>
+                <div class="software-bg-watermark">Ps</div>
+            </div>
+
+            <!-- Adobe Lightroom -->
+            <div class="software-card tilt-card" data-cursor="OPEN">
+                <div class="software-card-glow"></div>
+                <div class="software-logo-wrap">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 119.81" width="48"
+                        height="48">
+                        <g>
+                            <path fill="#001E36"
+                                d="M21.76,0h79.36c12.03,0,21.76,9.73,21.76,21.76v76.3c0,12.03-9.73,21.76-21.76,21.76H21.76 C9.73,119.81,0,110.08,0,98.05v-76.3C0,9.73,9.73,0,21.76,0L21.76,0z" />
+                            <path fill="#31A8FF"
+                                d="M64.51,84.68H32.06c-0.58,0-0.81-0.29-0.81-0.91V31.44c-0.05-0.33,0.19-0.67,0.58-0.72c0.05,0,0.1,0,0.19,0 h10.02c0.24-0.05,0.58,0.14,0.58,0.43c0,0.05,0,0.1,0,0.14v42.99h23.67c0.53,0,0.67,0.24,0.58,0.72l-1.49,8.91 c0,0.24-0.14,0.48-0.29,0.62C64.89,84.64,64.7,84.68,64.51,84.68L64.51,84.68z" />
+                            <path fill="#31A8FF"
+                                d="M72.7,43.71h8.96c0.53,0,0.91,0.34,1.05,0.81c0.19,0.34,0.34,0.77,0.43,1.2c0.1,0.53,0.19,1.05,0.24,1.58 c0.05,0.58,0.1,1.2,0.1,1.82c1.53-1.77,3.4-3.26,5.46-4.41c2.35-1.29,4.98-1.92,7.62-1.82c0.34-0.05,0.67,0.19,0.72,0.57 c0,0.05,0,0.1,0,0.19v10.02c0,0.43-0.24,0.58-0.81,0.58c-3.31-0.19-6.66,0.43-9.68,1.73c-1.01,0.48-2.01,1.05-2.78,1.92v26.12 c0,0.53-0.19,0.72-0.67,0.72h-9.97c-0.43,0.05-0.77-0.19-0.81-0.62c0-0.05,0-0.14,0-0.19V55.54c0-1.25,0-2.49-0.05-3.83 c-0.05-1.34-0.05-2.68-0.1-3.98c-0.05-1.15-0.14-2.25-0.29-3.4c-0.05-0.24,0.1-0.53,0.34-0.58C72.56,43.66,72.61,43.66,72.7,43.71 L72.7,43.71L72.7,43.71z" />
+                        </g>
+                    </svg>
+                </div>
+                <div class="software-info">
+                    <h3 class="software-name">Adobe Lightroom</h3>
+                    <span class="software-level">Learning Level</span>
+                </div>
+                <div class="software-bg-watermark">Lr</div>
+            </div>
+
+            <!-- Adobe Premiere Pro -->
+            <div class="software-card tilt-card" data-cursor="OPEN">
+                <div class="software-card-glow"></div>
+                <div class="software-logo-wrap">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.84 500.01" width="48" height="48">
+                        <title>adobe-premiere-pro</title>
+                        <path fill="#00005b"
+                            d="M90.81,0H422a90.74,90.74,0,0,1,90.82,90.81V409.2A90.73,90.73,0,0,1,422,500H90.81A90.73,90.73,0,0,1,0,409.2V90.81A90.74,90.74,0,0,1,90.81,0Z" />
+                        <path fill="#99f"
+                            d="M121.8,350.65V130.77c0-1.49.64-2.35,2.14-2.35,3.63,0,7.05,0,12-.21,5.13-.21,10.47-.21,16.24-.43s12-.21,18.59-.43,13-.21,19.45-.21c17.52,0,32,2.14,44,6.62a76.35,76.35,0,0,1,28.64,17.53,67.94,67.94,0,0,1,15.6,24.36,81.86,81.86,0,0,1,4.91,27.77q0,27.57-12.82,45.52A73.2,73.2,0,0,1,236.12,275c-14.53,5.34-30.56,7.26-48.08,7.26-5.13,0-8.55,0-10.68-.21s-5.13-.21-9.19-.21v68.59a2.66,2.66,0,0,1-2.35,3H124.36C122.65,353.43,121.8,352.57,121.8,350.65Zm46.58-181v71.8c3,.21,5.77.43,8.33.43H188A79.61,79.61,0,0,0,212.61,238a36.71,36.71,0,0,0,17.52-11.32c4.49-5.35,6.63-12.61,6.63-22a35.19,35.19,0,0,0-4.92-19,31,31,0,0,0-15-12.18,62.55,62.55,0,0,0-25.22-4.27c-5.55,0-10.47,0-14.53.21a49.8,49.8,0,0,0-8.76.21Z" />
+                        <path fill="#99f"
+                            d="M313.26,182.06h37.39a4.8,4.8,0,0,1,4.49,3.42,21.39,21.39,0,0,1,1.28,5.34c.43,2.13.86,4.48,1.07,6.62.21,2.35.43,4.92.43,7.69a79.63,79.63,0,0,1,22.86-18.37,66.17,66.17,0,0,1,32.48-8.34,2.66,2.66,0,0,1,3,2.35V223.3c0,1.71-1.07,2.35-3.42,2.35a92.62,92.62,0,0,0-23.08,2.13,88.75,88.75,0,0,0-17.94,5.77,33.3,33.3,0,0,0-10.9,7.91v109c0,2.13-.86,3-2.78,3H316a3,3,0,0,1-3.41-2.57V231.63c0-5.13,0-10.47-.22-16s-.21-11.11-.43-16.66c0-4.92-.42-9.62-.85-14.53a2,2,0,0,1,1.5-2.35c0-.22.42-.22.64,0Z" />
+                    </svg>
+                </div>
+                <div class="software-info">
+                    <h3 class="software-name">Adobe Premiere Pro</h3>
+                    <span class="software-level">Learning Level</span>
+                </div>
+                <div class="software-bg-watermark">Pr</div>
+            </div>
+
+            <!-- CapCut -->
+            <div class="software-card tilt-card" data-cursor="OPEN">
+                <div class="software-card-glow"></div>
+                <div class="software-logo-wrap">
+                    <svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision"
+                        text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd"
+                        clip-rule="evenodd" viewBox="0 0 512 509.659" width="48" height="48">
+                        <path fill="#fff"
+                            d="M116.971 2.475h278.058c62.971 0 114.494 51.522 114.494 114.494v275.722c0 62.971-51.523 114.493-114.494 114.493H116.971c-62.972 0-114.494-51.522-114.494-114.493V116.969c0-62.972 51.522-114.494 114.494-114.494z" />
+                        <path fill="#999" fill-rule="nonzero"
+                            d="M116.97-.001h278.06C459.366-.001 512 52.633 512 116.969v275.722c0 64.335-52.634 116.969-116.97 116.969H116.97C52.636 509.66 0 457.026 0 392.691V116.969C0 52.633 52.636-.001 116.97-.001zm278.06 4.953H116.97C55.364 4.952 4.953 55.363 4.953 116.969v275.722c0 61.605 50.411 112.017 112.017 112.017h278.06c61.607 0 112.017-50.411 112.017-112.017V116.969c0-61.607-50.41-112.017-112.017-112.017z" />
+                        <path fill="#fff" fill-rule="nonzero"
+                            d="M109.095 181.505c-.123 8.897 0 17.813 0 26.71a5.41 5.41 0 003.225 4.917 23898.407 23898.407 0 0084.108 41.646c-27.832 13.672-55.563 27.526-83.353 41.259a5.938 5.938 0 00-4.081 4.876v26.771c1.854 18.195 15.823 32.817 33.913 35.503 3.509.326 7.02.266 10.529.266l155.85.001a45.08 45.08 0 0011.224-.92 40.825 40.825 0 0026.137-20.015 63.699 63.699 0 004.288-11.226c15.997 8.325 32.341 16.079 48.462 24.179.385.291.857.447 1.343.447a2.266 2.266 0 002.265-2.265v-.016-27.669a4.695 4.695 0 00-3.143-4.079l-135.323-67.112c45.203-22.431 90.412-44.876 135.63-67.335a4.573 4.573 0 002.754-4.082v-27.628a2.183 2.183 0 00-3.142-1.673l-49.135 24.363a42.189 42.189 0 00-6.388-14.917 40.613 40.613 0 00-30.097-17.422l-167.133-.001c-19.615.91-35.688 15.918-37.933 35.424v-.002z" />
+                        <path fill="#fff" fill-rule="nonzero"
+                            d="M140.049 181.689a10.082 10.082 0 019.345-5.55h161.545l.106-.001c5.066 0 9.368 3.72 10.096 8.734.205 2.714.102 5.428 0 8.162l-90.597 44.891c-30.608-15.018-61.03-30.22-91.535-45.339.142-3.632-.633-7.53 1.04-10.897zM139.009 317.095a24846.007 24846.007 0 0191.351-45.319c30.322 14.773 60.521 29.954 90.802 44.89-.204 3.918.755 8.162-1.305 11.773a10.085 10.085 0 01-8.755 5.08h-.082l-161.605.002-.277.002a10.202 10.202 0 01-9.007-5.411c-1.796-3.386-.98-7.345-1.122-11.017z" />
+                        <path fill-rule="nonzero"
+                            d="M109.095 181.505c2.223-19.532 18.316-34.578 37.955-35.483l167.194-.001a40.612 40.612 0 0130.095 17.427 42.152 42.152 0 016.39 14.915l49.135-24.364a2.185 2.185 0 013.141 1.674v27.628l.001.096a4.571 4.571 0 01-2.837 4.229 177620.936 177620.936 0 00-135.63 67.336l135.324 66.948a4.695 4.695 0 013.142 4.08v27.685a2.266 2.266 0 01-3.613 1.821c-16.12-8.162-32.464-15.854-48.462-24.18a63.503 63.503 0 01-4.282 11.225 40.813 40.813 0 01-26.098 20.135 44.994 44.994 0 01-11.221.919l-155.833.003c-3.51 0-7.04 0-10.53-.266-18.089-2.705-32.049-17.363-33.869-35.565v-26.77a5.935 5.935 0 014.08-4.879c27.791-13.732 55.521-27.587 83.353-41.258a32412.61 32412.61 0 00-84.17-41.748 5.41 5.41 0 01-3.223-4.918c-.042-8.876-.185-17.792-.042-26.689zm30.975.184c-1.674 3.367-.898 7.263-1.041 10.896 30.608 15.12 60.99 30.321 91.536 45.339 30.185-14.963 60.384-29.927 90.596-44.89 0-2.714.123-5.428 0-8.162a10.203 10.203 0 00-10.096-8.734h-.106l-161.565.001a10.082 10.082 0 00-9.345 5.55h.021zm-1.041 135.406c.142 3.673-.654 7.631 1.122 11.039a10.204 10.204 0 009.284 5.405l161.667.002.081-.001c3.618 0 6.961-1.94 8.754-5.081 2.04-3.57 1.102-7.855 1.305-11.773-30.26-14.936-60.48-30.118-90.801-44.89a43915.126 43915.126 0 00-91.432 45.299h.02z" />
+                    </svg>
+                </div>
+                <div class="software-info">
+                    <h3 class="software-name">CapCut</h3>
+                    <span class="software-level">Expert · Reels </span>
+                </div>
+                <div class="software-bg-watermark">Cc</div>
+            </div>
+
+            <!-- Canva -->
+            <div class="software-card tilt-card" data-cursor="OPEN">
+                <div class="software-card-glow"></div>
+                <div class="software-logo-wrap">
+                    <svg viewBox="0 0 508 508" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
+                        clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" width="48" height="48">
+                        <g transform="matrix(.26718 0 0 .26718 0 0)">
+                            <circle cx="950" cy="950" r="950" fill="#7d2ae7" />
+                            <circle cx="950" cy="950" r="950" fill="url(#prefix___Radial1)" />
+                            <circle cx="950" cy="950" r="950" fill="url(#prefix___Radial2)" />
+                            <circle cx="950" cy="950" r="950" fill="url(#prefix___Radial3)" />
+                            <circle cx="950" cy="950" r="950" fill="url(#prefix___Radial4)" />
+                        </g>
+                        <path
+                            d="M446.744 276.845c-.665 0-1.271.43-1.584 1.33-4.011 11.446-9.43 18.254-13.891 18.254-2.563 0-3.6-2.856-3.6-7.336 0-11.21 6.71-34.982 10.095-45.82.392-1.312.646-2.485.646-3.483 0-3.15-1.722-4.696-5.987-4.696-4.598 0-9.547 1.8-14.36 10.233-1.663-7.435-6.691-10.683-13.715-10.683-8.12 0-15.965 5.224-22.421 13.696-6.456 8.471-14.048 11.25-19.76 9.88 4.108-10.057 5.634-17.57 5.634-23.145 0-8.746-4.324-14.028-11.308-14.028-10.624 0-16.747 10.134-16.747 20.797 0 8.237 3.736 16.708 11.954 20.817-6.887 15.573-16.943 29.66-20.758 29.66-4.93 0-6.379-24.123-6.105-41.38.176-9.9.998-10.408.998-13.401 0-1.722-1.115-2.896-5.595-2.896-10.448 0-13.676 8.844-14.165 18.998a50.052 50.052 0 01-1.8 11.406c-4.363 15.573-13.363 27.39-19.232 27.39-2.72 0-3.463-2.72-3.463-6.28 0-11.21 6.28-25.219 6.28-37.173 0-8.784-3.854-14.34-11.112-14.34-8.55 0-19.858 10.173-30.56 29.229 3.521-14.595 4.97-28.721-5.459-28.721a14.115 14.115 0 00-6.476 1.683 3.689 3.689 0 00-2.113 3.56c.998 15.535-12.521 55.329-25.336 55.329-2.328 0-3.463-2.524-3.463-6.593 0-11.23 6.691-34.943 10.056-45.801.43-1.409.666-2.622.666-3.678 0-2.974-1.84-4.5-6.007-4.5-4.578 0-9.547 1.741-14.34 10.174-1.683-7.435-6.711-10.683-13.735-10.683-11.523 0-24.397 12.19-30.051 28.076-7.572 21.208-22.832 41.692-43.375 41.692-18.645 0-28.486-15.515-28.486-40.03 0-35.392 25.982-64.308 45.253-64.308 9.215 0 13.617 5.869 13.617 14.869 0 10.897-6.085 15.964-6.085 20.112 0 1.272 1.057 2.524 3.15 2.524 8.374 0 18.234-9.841 18.234-23.262 0-13.422-10.897-23.243-30.168-23.243-31.851 0-63.898 32.047-63.898 73.113 0 32.673 16.121 52.374 44 52.374 19.017 0 35.628-14.79 44.588-32.047 1.018 14.302 7.513 21.776 17.413 21.776 8.804 0 15.925-5.243 21.364-14.458 2.094 9.645 7.65 14.36 14.87 14.36 8.275 0 15.201-5.243 21.794-14.986-.097 7.65 1.644 14.85 8.276 14.85 3.13 0 6.867-.725 7.533-3.464 6.984-28.877 24.24-52.453 29.523-52.453 1.565 0 1.995 1.507 1.995 3.287 0 7.846-5.537 23.928-5.537 34.2 0 11.092 4.716 18.43 14.459 18.43 10.8 0 21.775-13.227 29.092-32.556 2.29 18.058 7.24 32.633 14.987 32.633 9.508 0 26.392-20.014 36.625-41.203 4.01.509 10.036.372 15.827-3.717-2.465 6.241-3.912 13.07-3.912 19.897 0 19.663 9.39 25.18 17.47 25.18 8.785 0 15.907-5.243 21.365-14.458 1.8 8.315 6.398 14.34 14.85 14.34 13.225 0 24.71-13.519 24.71-24.612 0-2.934-1.252-4.715-2.72-4.715zm-274.51 18.547c-5.342 0-7.435-5.38-7.435-13.401 0-13.93 9.528-37.193 19.604-37.193 4.402 0 6.065 5.185 6.065 11.524 0 14.145-9.059 39.07-18.235 39.07zm182.948-41.574c-3.189-3.796-4.343-8.961-4.343-13.559 0-5.673 2.074-10.467 4.558-10.467 2.485 0 3.248 2.446 3.248 5.85 0 5.693-2.035 14.008-3.463 18.176zm41.418 41.574c-5.34 0-7.434-6.182-7.434-13.401 0-13.441 9.528-37.193 19.682-37.193 4.402 0 5.967 5.146 5.967 11.524 0 14.145-8.902 39.07-18.215 39.07z"
+                            fill="#fff" fill-rule="nonzero" />
+                        <defs>
+                            <radialGradient id="prefix___Radial1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                                gradientTransform="scale(1469.491) rotate(-49.416 1.37 .302)">
+                                <stop offset="0" stop-color="#6420ff" />
+                                <stop offset="1" stop-color="#6420ff" stop-opacity="0" />
+                            </radialGradient>
+                            <radialGradient id="prefix___Radial2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                                gradientTransform="rotate(54.703 42.717 594.194) scale(1657.122)">
+                                <stop offset="0" stop-color="#00c4cc" />
+                                <stop offset="1" stop-color="#00c4cc" stop-opacity="0" />
+                            </radialGradient>
+                            <radialGradient id="prefix___Radial3" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                                gradientTransform="matrix(1023 -1030 473.711 470.491 367 1684)">
+                                <stop offset="0" stop-color="#6420ff" />
+                                <stop offset="1" stop-color="#6420ff" stop-opacity="0" />
+                            </radialGradient>
+                            <radialGradient id="prefix___Radial4" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                                gradientTransform="matrix(595.999 1372 -2298.41 998.431 777 256)">
+                                <stop offset="0" stop-color="#00c4cc" stop-opacity=".73" />
+                                <stop offset="0" stop-color="#00c4cc" />
+                                <stop offset="1" stop-color="#00c4cc" stop-opacity="0" />
+                            </radialGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="software-info">
+                    <h3 class="software-name">Canva Creative Suite</h3>
+                    <span class="software-level">Advanced Direction</span>
+                </div>
+                <div class="software-bg-watermark">Cn</div>
+            </div>
+        </div>
+    </section>
+    <section class="section premium-skills-section" id="skills">
+        <div class="skills-parallax-bg"></div>
+        <div class="skills-cursor-glow" id="skillsCursorGlow"></div>
+
+        <!-- TOP AREA: HORIZONTAL SWIPER SLIDER -->
+        <div class="skills-slider-container fade-up">
+            <!-- Top Bar with Editorial Title & Custom Nav Arrows -->
+            <div class="slider-header-bar">
+                <div class="slider-title-group">
+                    <span class="slider-mini-label">MY SKILLS</span>
+                    <h3 class="slider-editorial-title">What I Do <span class="title-star-accent">✦</span></h3>
+                </div>
+                <div class="slider-custom-nav">
+                    <button class="slider-arrow skills-prev-btn magnetic-btn" data-cursor="DRAG"
+                        aria-label="Previous Skill">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M15 18l-6-6 6-6" />
+                        </svg>
+                    </button>
+                    <button class="slider-arrow skills-next-btn magnetic-btn" data-cursor="DRAG"
+                        aria-label="Next Skill">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M9 18l6-6-6-6" />
+                        </svg>
+                    </button>
                 </div>
             </div>
-            <!-- <form class="contact-form" action="https://formspree.io/amitkumarsingh915181@gmail.com" method="POST">
-               
-                <input type="hidden" name="_next" value="https://randomclicker.exe.portfolio/">
-                <div class="form-field">
-                    <label class="form-label">Name</label>
-                    <input type="text" name="name" class="form-input" placeholder="Your name" required>
+
+            <!-- Swiper Slider Track -->
+            <div class="swiper skills-swiper" id="skillsSwiper">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide skill-swiper-slide">
+                        <div class="skill-slide-card tilt-card magnetic-card" data-cursor="EXPLORE">
+                            <div class="card-glass-glow"></div>
+                            <div class="slide-icon-box">
+                                <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18" />
+                                    <line x1="7" y1="2" x2="7" y2="22" />
+                                    <line x1="17" y1="2" x2="17" y2="22" />
+                                    <line x1="2" y1="12" x2="22" y2="12" />
+                                    <line x1="2" y1="7" x2="7" y2="7" />
+                                    <line x1="2" y1="17" x2="7" y2="17" />
+                                </svg>
+                            </div>
+                            <div class="slide-info">
+                                <h4 class="slide-title">Filmmaking &amp; Editing</h4>
+                            </div>
+                            <div class="slide-active-indicator"></div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide skill-swiper-slide">
+                        <div class="skill-slide-card tilt-card magnetic-card" data-cursor="READ">
+                            <div class="card-glass-glow"></div>
+                            <div class="slide-icon-box">
+                                <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                    <polyline points="14 2 14 8 20 8" />
+                                    <line x1="16" y1="13" x2="8" y2="13" />
+                                    <line x1="16" y1="17" x2="8" y2="17" />
+                                </svg>
+                            </div>
+                            <div class="slide-info">
+                                <h4 class="slide-title">Storytelling &amp; Writing</h4>
+                            </div>
+                            <div class="slide-active-indicator"></div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide skill-swiper-slide">
+                        <div class="skill-slide-card tilt-card magnetic-card" data-cursor="VIEW">
+                            <div class="card-glass-glow"></div>
+                            <div class="slide-icon-box">
+                                <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                </svg>
+                            </div>
+                            <div class="slide-info">
+                                <h4 class="slide-title">Creative Direction &amp; Ideas</h4>
+                            </div>
+                            <div class="slide-active-indicator"></div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="swiper-slide skill-swiper-slide">
+                        <div class="skill-slide-card tilt-card magnetic-card" data-cursor="GALLERY">
+                            <div class="card-glass-glow"></div>
+                            <div class="slide-icon-box">
+                                <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <path
+                                        d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                                    <circle cx="12" cy="13" r="4" />
+                                </svg>
+                            </div>
+                            <div class="slide-info">
+                                <h4 class="slide-title">Photography Mastery</h4>
+                            </div>
+                            <div class="slide-active-indicator"></div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 5 -->
+                    <div class="swiper-slide skill-swiper-slide">
+                        <div class="skill-slide-card tilt-card magnetic-card" data-cursor="WORKFLOW">
+                            <div class="card-glass-glow"></div>
+                            <div class="slide-icon-box">
+                                <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                                    <polyline points="2 17 12 22 22 17" />
+                                    <polyline points="2 12 12 17 22 12" />
+                                </svg>
+                            </div>
+                            <div class="slide-info">
+                                <h4 class="slide-title">AI Workflow &amp; Prompts</h4>
+                            </div>
+                            <div class="slide-active-indicator"></div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 6 -->
+                    <div class="swiper-slide skill-swiper-slide">
+                        <div class="skill-slide-card tilt-card magnetic-card" data-cursor="REELS">
+                            <div class="card-glass-glow"></div>
+                            <div class="slide-icon-box">
+                                <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+                                    <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" />
+                                </svg>
+                            </div>
+                            <div class="slide-info">
+                                <h4 class="slide-title">Instagram Reels · Shorts · Thumbnail Design</h4>
+                            </div>
+                            <div class="slide-active-indicator"></div>
+                        </div>
+                    </div>
+
+                    <!-- Duplicated Slides for Seamless Infinite Loop -->
+                    <div class="swiper-slide skill-swiper-slide">
+                        <div class="skill-slide-card tilt-card magnetic-card" data-cursor="EXPLORE">
+                            <div class="card-glass-glow"></div>
+                            <div class="slide-icon-box">
+                                <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18" />
+                                    <line x1="7" y1="2" x2="7" y2="22" />
+                                    <line x1="17" y1="2" x2="17" y2="22" />
+                                    <line x1="2" y1="12" x2="22" y2="12" />
+                                </svg>
+                            </div>
+                            <div class="slide-info">
+                                <h4 class="slide-title">Filmmaking &amp; Editing</h4>
+                            </div>
+                            <div class="slide-active-indicator"></div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide skill-swiper-slide">
+                        <div class="skill-slide-card tilt-card magnetic-card" data-cursor="READ">
+                            <div class="card-glass-glow"></div>
+                            <div class="slide-icon-box">
+                                <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                    <polyline points="14 2 14 8 20 8" />
+                                </svg>
+                            </div>
+                            <div class="slide-info">
+                                <h4 class="slide-title">Storytelling &amp; Writing</h4>
+                            </div>
+                            <div class="slide-active-indicator"></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-field">
-                    <label class="form-label">Email</label>
-                    <input type="email" name="_replyto" class="form-input" placeholder="amitkumarsingh915181@gmail.com"
-                        required>
-                </div>
-                <div class="form-field">
-                    <label class="form-label">Subject</label>
-                    <input type="text" name="_subject" class="form-input" placeholder="What is this regarding?"
-                        required>
-                </div>
-                <div class="form-field">
-                    <label class="form-label">Message</label>
-                    <textarea name="message" class="form-textarea" rows="5" placeholder="Tell me about your project..."
-                        required></textarea>
-                </div>
-                <button type="submit" class="form-submit">Send Message</button>
-            </form> -->
+                <!-- Swiper Pagination -->
+                <div class="skills-swiper-pagination"></div>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <span>© 2025 randomclicker.exe</span>
-        <span>Powered by Instagram API</span>
-        <span>All rights reserved</span>
+
+
+    <!-- CONTACT SECTION -->
+    <section class="section contact-section" id="contact">
+        <div class="contact-editorial-grid">
+            <div class="contact-left">
+                <span class="section-tag">Let's Connect</span>
+                <h2 class="contact-huge-title">Have a project<br>in mind?</h2>
+                <p class="contact-sub">Available for global assignments, brand collaborations, and creative commissions.
+                    Drop a line below or reach out directly.</p>
+
+                <div class="contact-direct">
+                    <a href="mailto:amitkumarsingh915181@gmail.com" class="direct-link" data-cursor="OPEN">
+                        <span class="direct-label">Email</span>
+                        <span class="direct-val">amitkumarsingh915181@gmail.com</span>
+                    </a>
+                    <a href="tel:+919151814927" class="direct-link" data-cursor="OPEN">
+                        <span class="direct-label">Telephone</span>
+                        <span class="direct-val">+91 9151814927</span>
+                    </a>
+                    <div class="direct-link">
+                        <span class="direct-label">Location</span>
+                        <span class="direct-val">Delhi, India &nbsp;&middot;&nbsp; Global Travel</span>
+                    </div>
+                </div>
+
+                <!-- Social Links -->
+                <div class="social-icons-row">
+                    <a href="https://instagram.com/randomclicker.exe" target="_blank" rel="noopener noreferrer"
+                        class="social-icon-btn" aria-label="Instagram" data-cursor="OPEN">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                        </svg>
+                    </a>
+                    <a href="https://wa.me/919151814927" target="_blank" rel="noopener noreferrer"
+                        class="social-icon-btn" aria-label="WhatsApp" data-cursor="OPEN">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <path
+                                d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-right">
+                <form class="contact-form" id="contactForm" onsubmit="handleFormSubmit(event)">
+                    <div class="form-group floating-group">
+                        <input type="text" id="formName" class="form-input" placeholder=" " required>
+                        <label for="formName" class="form-floating-label">Your Name</label>
+                    </div>
+
+                    <div class="form-group floating-group">
+                        <input type="email" id="formEmail" class="form-input" placeholder=" " required>
+                        <label for="formEmail" class="form-floating-label">Email Address</label>
+                    </div>
+
+                    <div class="form-group floating-group">
+                        <input type="text" id="formSubject" class="form-input" placeholder=" " required>
+                        <label for="formSubject" class="form-floating-label">Subject / Commission Type</label>
+                    </div>
+
+                    <div class="form-group floating-group">
+                        <textarea id="formMessage" class="form-textarea" rows="4" placeholder=" " required></textarea>
+                        <label for="formMessage" class="form-floating-label">Project Details &amp; Timeline</label>
+                    </div>
+
+                    <button type="submit" class="btn-send" data-cursor="PLAY">
+                        <span class="btn-send-text">Send Message</span>
+                        <svg class="send-svg" viewBox="0 0 24 24" width="18" height="18" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <line x1="22" y1="2" x2="11" y2="13" />
+                            <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer class="footer">
+        <div class="footer-noise"></div>
+        <div class="footer-content">
+            <div class="footer-huge-type" data-cursor="SCROLL">
+                <span class="huge-line">KEEP</span>
+                <span class="huge-line accent-line">CLICKING.</span>
+                <span class="huge-line">KEEP</span>
+                <span class="huge-line accent-line">CREATING.</span>
+            </div>
+
+            <div class="footer-bottom-bar">
+                <span>&copy; 2026 Amit Singh (randomclicker.exe)</span>
+                <span class="footer-craft">Crafted for Awwwards Editorial Excellence</span>
+                <a href="#hero" class="back-to-top" data-cursor="SCROLL">
+                    <span>Back to Top</span>
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 19V5M5 12l7-7 7 7" />
+                    </svg>
+                </a>
+            </div>
+        </div>
     </footer>
 
-    <!-- Lightbox -->
+    <!-- LIGHTBOX MODAL -->
     <div class="lightbox" id="lightbox">
-        <button class="lightbox-close" onclick="closeLightbox()">✕</button>
-        <button class="slider-nav slider-prev" id="slider-prev" onclick="prevSlide()">‹</button>
-        <button class="slider-nav slider-next" id="slider-next" onclick="nextSlide()">›</button>
+        <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close Lightbox" data-cursor="VIEW">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+        </button>
+        <button class="slider-nav slider-prev" id="slider-prev" onclick="prevSlide()" aria-label="Previous Slide"
+            data-cursor="VIEW">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6" />
+            </svg>
+        </button>
+        <button class="slider-nav slider-next" id="slider-next" onclick="nextSlide()" aria-label="Next Slide"
+            data-cursor="VIEW">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6" />
+            </svg>
+        </button>
+
         <div class="lightbox-content">
-            <img src="" alt="" class="lightbox-img" id="lightbox-img" style="display:none;">
-            <div id="video-wrapper" style="display:none; width:100%;">
+            <img src="" alt="Zoom View" class="lightbox-img" id="lightbox-img" style="display:none;">
+            <div id="video-wrapper" class="lightbox-video-wrap" style="display:none;">
                 <video id="lightbox-video" playsinline controls></video>
             </div>
         </div>
-        <p class="lightbox-caption" id="lightbox-caption"></p>
+        <div class="lightbox-caption-bar">
+            <p class="lightbox-caption" id="lightbox-caption"></p>
+        </div>
     </div>
-
-    <!-- External Scripts -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
     <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <!-- Custom JS -->
     <script src="script.js"></script>
 </body>
 
