@@ -1714,6 +1714,57 @@ body {
    ============================================================ */
 .gallery-section {
     background-color: var(--surface);
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-floating-decorations {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.decor-icon {
+    position: absolute;
+    color: var(--warm);
+    opacity: 0.4;
+    transform-origin: center center;
+    display: block;
+}
+
+@keyframes float-cinematic {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    33% { transform: translate(20px, -25px) rotate(120deg); }
+    66% { transform: translate(-15px, 20px) rotate(240deg); }
+    100% { transform: translate(0, 0) rotate(360deg); }
+}
+
+@keyframes float-cinematic-alt {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    33% { transform: translate(-20px, 25px) rotate(-120deg); }
+    66% { transform: translate(15px, -20px) rotate(-240deg); }
+    100% { transform: translate(0, 0) rotate(-360deg); }
+}
+
+.decor-1 { top: 10%; left: 8%; width: 54px; height: 54px; animation: float-cinematic 25s linear infinite; }
+.decor-2 { top: 25%; right: 12%; width: 44px; height: 44px; animation: float-cinematic-alt 80s linear infinite; }
+.decor-3 { top: 40%; left: 15%; width: 64px; height: 64px; animation: float-cinematic 30s linear infinite; }
+.decor-4 { bottom: 30%; right: 5%; width: 48px; height: 48px; animation: float-cinematic-alt 70s linear infinite; }
+.decor-5 { bottom: 15%; left: 10%; width: 72px; height: 72px; animation: float-cinematic 90s linear infinite; opacity: 0.08; }
+.decor-6 { top: 15%; right: 25%; width: 50px; height: 50px; animation: float-cinematic-alt 22s linear infinite; }
+.decor-7 { top: 50%; left: 2%; width: 38px; height: 38px; animation: float-cinematic 75s linear infinite; }
+.decor-8 { bottom: 45%; right: 15%; width: 56px; height: 56px; animation: float-cinematic-alt 28s linear infinite; }
+.decor-9 { top: 5%; left: 45%; width: 40px; height: 40px; animation: float-cinematic 65s linear infinite; }
+.decor-10 { bottom: 10%; right: 35%; width: 60px; height: 60px; animation: float-cinematic-alt 20s linear infinite; }
+.decor-11 { top: 60%; right: 40%; width: 42px; height: 42px; animation: float-cinematic 85s linear infinite; }
+
+.gallery-section .section-header,
+.gallery-section .gallery-filter-bar,
+.gallery-section .gallery-masonry {
+    position: relative;
+    z-index: 2;
 }
 
 .gallery-filter-bar {
@@ -2785,6 +2836,10 @@ body {
         min-height: 450px;
     }
 
+    .decor-icon {
+        scale: 0.75;
+    }
+
     .nav-links {
         display: none;
     }
@@ -2869,6 +2924,14 @@ body {
         flex-direction: column;
         align-items: stretch;
         gap: 1rem;
+    }
+
+    .decor-icon {
+        scale: 0.6;
+    }
+    
+    .decor-3, .decor-5, .decor-8, .decor-10 {
+        display: none;
     }
 
     .btn-primary {
